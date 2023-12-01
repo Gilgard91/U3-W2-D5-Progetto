@@ -1,16 +1,16 @@
-<h3 class="mt-4"*ngIf="!pageLoaded">CIAO 🛗</h3>
-<div class="mt-4" *ngIf="pageLoaded">
-  <div *ngIf="todosArr.length == 0">Ammazzati coglione</div>
+<h3 class="mt-4r" *ngIf="!pageLoaded">Recupero Task...</h3>
+<div id="todos" class="mt-4" *ngIf="pageLoaded">
+  <div *ngIf="todosArr.length == 0">Oops, non ci sono Task</div>
   <div *ngFor="let todo of todosArr">
     <ng-container *ngIf="!todo.completed"
       >- {{ todo.title }}
-      <a type="button" id="listButton" (click)="markCompleted(todo.id)">
-        ✅
-      </a></ng-container
+      <a type="button" (click)="markCompleted(todo.id)"> ✅ </a></ng-container
     >
   </div>
   <div class="mt-2">
     <input type="text" [(ngModel)]="inputTodo" />
-    <button type="button" (click)="addTodo()">Aggiungi</button>
+    <button type="button" (click)="addTodo()">
+      +
+    </button>
   </div>
 </div>

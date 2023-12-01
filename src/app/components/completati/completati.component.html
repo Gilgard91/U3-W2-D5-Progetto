@@ -1,0 +1,6 @@
+<h3 *ngIf="!pageLoaded">CIAO 🛗</h3>
+<div *ngIf="pageLoaded">
+  <div *ngFor="let todo of todosArr">
+    <ng-container *ngIf="todo.completed">- {{ todo.title }} </ng-container>
+  </div>
+</div>
